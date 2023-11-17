@@ -249,10 +249,23 @@ footer p {
     right: 10px;
   }
 
+
+  .article-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
   .article-info h1 {
     color: #FF6060;
     font-weight: 500;
     font-size: 40px;
+  }
+
+  .article-info p {
+    font-size: 20px;
+    color: #FF6060; 
   }
 
   .tags {
@@ -266,4 +279,29 @@ footer p {
     padding: 10px 30px;
     font-size: 20px;
     border-radius: 20px;
+  }
+
+  .host-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .host-info img {
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .host-info p {
+    font-weight: 500;
+    margin-right: 20px;
+    font-size: 20px;
+  }
+
+  .star {
+    font-size: 40px;
+    color: #E3E3E3;
+  }
+
+  .red {
+    color: #FF6060;
   }

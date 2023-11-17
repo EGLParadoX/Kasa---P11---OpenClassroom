@@ -46,9 +46,31 @@ export const Article = ({ articles }) => {
           <h1>{article.title}</h1>
           <p>{article.location}</p>
           <div className="tags">
-          {article.tags.map((tag) => (
-            <div key={tag} className="tag">{tag}</div>
-          ))}
+            {article.tags.map((tag) => (
+              <div key={tag} className="tag">
+                {tag}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="host-info">
+            <p>{article.host.name}</p>
+            <img src={article.host.picture} alt="" />
+          </div>
+          <div className="rating">
+            {(() => {
+              const stars = [];
+              for (let i = 0; i < 5; i++) {
+                const starClass = i < parseInt(article.rating, 10) ? "red" : "";
+                stars.push(
+                  <span key={i} className={`star ${starClass}`}>
+                    &#9733;
+                  </span>
+                );
+              }
+              return stars;
+            })()}
           </div>
         </div>
       </div>
