@@ -1,10 +1,13 @@
+import logo from '../assets/LOGO.png';
+
 const Footer = () => {
   return (
     <footer>
-        <img src="" alt="logo Kasa" />
-      &copy; 2020 Kasa. All rights reserved
+        <img src={logo} alt="logo Kasa" />
+      <p>&copy; 2020 Kasa. All rights reserved</p>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer
+
