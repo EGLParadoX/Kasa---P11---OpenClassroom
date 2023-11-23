@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/layout/Header';
 import { useState, useEffect } from 'react';
-import { Article } from './components/Article';
-import { AboutSection, HomeSection } from './components/Section';
-import Footer from './components/Footer';
+import Home from './components/pages/Home'; 
+import About from './components/pages/About'; 
+import Article from './components/pages/Article';
+import Footer from './components/layout/Footer';
 
 const App = () => {
-
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -23,15 +23,13 @@ const App = () => {
     fetchData();
   }, []);
 
-
-
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<HomeSection articles={articles} setArticles={setArticles} />} />
-        <Route path="/about" element={<AboutSection />} />
-        <Route path="/article/:id" element={<Article articles={articles} setArticles={setArticles}/>} />
+        <Route path="/" element={<Home articles={articles} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/article/:id" element={<Article articles={articles} />} />
       </Routes>
       <Footer />
     </Router>

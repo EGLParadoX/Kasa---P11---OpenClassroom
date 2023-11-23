@@ -1,46 +1,34 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
+import Collapse from "../utils/Collapse";
+import Gallery from "../utils/Gallery";
 
-export const Article = ({ articles }) => {
+const Article = ({ articles }) => {
   const { id } = useParams();
+  const [showBlock, setShowBlock] = useState({});
   const article = articles.find((article) => article.id === id);
-
-  console.log("Article:", article);
 
   if (!article) {
     return <div>Article not found</div>;
   }
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % article.pictures.length);
+  const links = ['Description', 'Equipements'];
+  const texts = {
+    'Description' : <p>{article.description}</p>,
+    'Equipements': article.equipments.map((equipment, index) => (
+      <p key={index}>{equipment}</p>
+    )),
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? article.pictures.length - 1 : prevSlide - 1
-    );
+  const handleClick = (link) => {
+    setShowBlock((prevState) => ({ ...prevState, [link]: !prevState[link] }));
   };
 
   return (
-    <div>
-      <div className="slider">
-        {article.pictures.map((picture, index) => (
-          <img
-            key={index}
-            src={picture}
-            alt={`Slide ${index + 1}`}
-            className={index === currentSlide ? "active" : ""}
-          />
-        ))}
-        <button className="prev" onClick={prevSlide}>
-          &#10094;
-        </button>
-        <button className="next" onClick={nextSlide}>
-          &#10095;
-        </button>
-      </div>
+    <div className="article-section">
+      <Gallery pictures={article.pictures} />
+
       <div className="article-info">
         <div>
           <h1>{article.title}</h1>
@@ -62,10 +50,10 @@ export const Article = ({ articles }) => {
             {(() => {
               const stars = [];
               for (let i = 0; i < 5; i++) {
-                const starClass = i < parseInt(article.rating, 10) ? "red" : "";
+                const starClass = i < parseInt(article.rating) ? "red" : "";
                 stars.push(
                   <span key={i} className={`star ${starClass}`}>
-                    &#9733;
+                    <i className="fa-solid fa-star"></i>
                   </span>
                 );
               }
@@ -74,6 +62,24 @@ export const Article = ({ articles }) => {
           </div>
         </div>
       </div>
+
+      <div className="article-button">
+        {links.map((link) => (
+          <Collapse
+            key={link}
+            title={link}
+            content={texts[link]}
+            isOpen={showBlock[link]}
+            onToggle={() => handleClick(link)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
+
+Article.propTypes = {
+  articles: PropTypes.array.isRequired,
+};
+
+export default Article;
