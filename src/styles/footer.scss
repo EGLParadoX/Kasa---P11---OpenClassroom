@@ -1,0 +1,20 @@
+footer {
+    position: absolute;
+    left: 0;
+    margin-top: 50px;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 40px 0px;
+    color: white;
+  
+    img {
+      height: 60px;
+      filter: brightness(0) invert(1);
+    }
+  
+    p {
+      color: white;
+      font-size: 30px;
+    }
+  }

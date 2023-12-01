@@ -1,0 +1,43 @@
+/*VERSION TABLETTE*/
+
+@media (max-width: 1024px) {
+
+    header {
+        ul {
+            width: 250px;
+        }
+        a {
+            font-size: 26px;
+        }
+
+        .header-logo {
+            height: 40px;
+        }
+    }
+
+    .banner-container {
+        height: 150px;
+        margin-top: 30px;
+
+        .banner {
+            border-radius: 20px;
+        }
+        .banner-text {
+            h1 {
+                font-size: 34px;
+            }
+        }
+    }
+  
+    .article-container {
+      flex: 0 0 calc(50% - 30px); /* 50% avec un espace de 20px entre les articles */
+      margin-bottom: 50px; /* Espace entre les articles */
+      height: 240px;
+
+      h2 {
+        font-size: 20px; /* Ajustez la taille de la police selon vos besoins */
+        margin: 10px
+      }
+    }  
+  }
+  

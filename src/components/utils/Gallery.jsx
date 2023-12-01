@@ -18,25 +18,27 @@ const Gallery = ({ pictures }) => {
 
   return (
     <div className="slider">
-      {pictures.map((picture, index) => (
-        <div key={index} className="slide-container">
+      <div className="slide-container">
+        {pictures.map((picture, index) => (
           <img
+            key={index}
             src={picture}
             alt={`Slide ${index + 1}`}
             className={index === currentSlide ? "active" : ""}
           />
-          {index === 0 && <div className="slide-counter">{slideCounter}</div>}
-        </div>
-      ))}
+        ))}
+      </div>
       <button className="prev" onClick={prevSlide}>
         &#10094;
       </button>
       <button className="next" onClick={nextSlide}>
         &#10095;
       </button>
+      <div className="slide-counter">{slideCounter}</div>
     </div>
   );
 };
+
 
 Gallery.propTypes = {
   pictures: PropTypes.array.isRequired,

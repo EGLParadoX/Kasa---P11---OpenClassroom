@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+  
+    a {
+      font-weight: 500;
+      text-decoration: none;
+      color: #FF6060;
+      font-size: 30px;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .header-logo {
+      height: 60px;
+    }
+  }
+  

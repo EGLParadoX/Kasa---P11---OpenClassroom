@@ -1,0 +1,49 @@
+.about-button {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.collapse-header {
+  padding:  2px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #FF6060;
+  font-size: 28px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapse-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
+  background-color: #F6F6F6;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #FF6060;
+
+  p {
+    margin: 20px;
+  }
+}
+
+.collapse-content.open {
+  max-height: 1000px;
+}
+
+.fa-chevron-up {
+  cursor: pointer;
+}
+
+.fa-chevron-up.rotate {
+  transition: transform 0.3s ease;
+  transform: rotate(-180deg);
+}
+
+.fa-chevron-up.reverse {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}

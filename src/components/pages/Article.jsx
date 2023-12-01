@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Collapse from "../utils/Collapse";
@@ -6,7 +5,6 @@ import Gallery from "../utils/Gallery";
 
 const Article = ({ articles }) => {
   const { id } = useParams();
-  const [showBlock, setShowBlock] = useState({});
   const article = articles.find((article) => article.id === id);
 
   if (!article) {
@@ -21,9 +19,6 @@ const Article = ({ articles }) => {
     )),
   };
 
-  const handleClick = (link) => {
-    setShowBlock((prevState) => ({ ...prevState, [link]: !prevState[link] }));
-  };
 
   return (
     <div className="article-section">
@@ -32,7 +27,7 @@ const Article = ({ articles }) => {
       <div className="article-info">
         <div>
           <h1>{article.title}</h1>
-          <p>{article.location}</p>
+          <p className="article-info-location">{article.location}</p>
           <div className="tags">
             {article.tags.map((tag) => (
               <div key={tag} className="tag">
@@ -69,8 +64,6 @@ const Article = ({ articles }) => {
             key={link}
             title={link}
             content={texts[link]}
-            isOpen={showBlock[link]}
-            onToggle={() => handleClick(link)}
           />
         ))}
       </div>

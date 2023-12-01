@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Collapse = ({ title, content, onToggle, isOpen }) => {
+const Collapse = ({ title, content, isOpen }) => {
   const [isCollapsed, setIsCollapsed] = useState(!isOpen);
-
-  useEffect(() => {
-    setIsCollapsed(!isOpen);
-  }, [isOpen]);
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-    onToggle && onToggle(!isCollapsed);
-  };
 
   return (
     <div className="collapse">
-      <div className="collapse-header" onClick={toggleCollapse}>
+      <div className="collapse-header" onClick={() => setIsCollapsed(!isCollapsed)}>
         <p>{title}</p>
         <span className={`fa-solid fa-chevron-up ${isCollapsed ? 'reverse' : 'rotate'}`}></span>
       </div>
