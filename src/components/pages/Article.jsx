@@ -2,14 +2,16 @@ import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Collapse from "../utils/Collapse";
 import Gallery from "../utils/Gallery";
+import { Navigate } from 'react-router-dom';
+
 
 const Article = ({ articles }) => {
   const { id } = useParams();
   const article = articles.find((article) => article.id === id);
 
-  if (!article) {
-    return <div>Article not found</div>;
-  }
+    if (!article) {
+      return <Navigate to="/404" />;
+    }
 
   const links = ['Description', 'Equipements'];
   const texts = {

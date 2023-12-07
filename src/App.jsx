@@ -3,6 +3,7 @@ import Header from './components/layout/Header';
 import { useState, useEffect } from 'react';
 import Home from './components/pages/Home'; 
 import About from './components/pages/About'; 
+import Error404 from './components/pages/Error404';
 import Article from './components/pages/Article';
 import Footer from './components/layout/Footer';
 
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/" element={<Home articles={articles} />} />
         <Route path="/about" element={<About />} />
         <Route path="/article/:id" element={<Article articles={articles} />} />
+        <Route path="*" element={<Error404 />} /> 
       </Routes>
       <Footer />
     </Router>

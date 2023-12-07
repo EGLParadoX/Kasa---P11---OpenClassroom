@@ -16,6 +16,24 @@ const Gallery = ({ pictures }) => {
 
   const slideCounter = `${currentSlide + 1}/${pictures.length}`;
 
+
+  if (pictures.length <= 1) {
+    return (
+      <div className="slider">
+        <div className="slide-container">
+          {pictures.map((picture, index) => (
+            <img
+              key={index}
+              src={picture}
+              alt={`Slide ${index + 1}`}
+              className={index === currentSlide ? "active" : ""}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="slider">
       <div className="slide-container">
@@ -39,9 +57,9 @@ const Gallery = ({ pictures }) => {
   );
 };
 
-
 Gallery.propTypes = {
   pictures: PropTypes.array.isRequired,
 };
 
 export default Gallery;
+

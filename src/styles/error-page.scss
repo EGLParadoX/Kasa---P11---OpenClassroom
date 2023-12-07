@@ -1,0 +1,19 @@
+.Error {
+    text-align: center;
+    &-Title {
+        font-size: 200px;
+        color: #FF6060;
+        margin-bottom: 0;
+    }
+
+    &-Subtitle {
+        font-size: 40px;
+        color: #FF6060;
+        margin-bottom: 100px;
+    }
+
+    &-Link {
+        font-size: 25px;
+        text-decoration: underline;
+    }
+}
