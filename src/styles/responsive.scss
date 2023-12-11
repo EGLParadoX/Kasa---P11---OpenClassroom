@@ -40,4 +40,170 @@
       }
     }  
   }
+
+
+
+  @media (max-width: 767px) {
+
+    body {
+        padding: 20px;
+    }
+
+    header {
+        ul {
+            width: 180px;
+        }
+        a {
+            font-size: 18px;
+        }
+
+        .header-logo{
+            height: 40px;
+        }
+    }
+
+    .Error {
+        margin-top: -50px;
+        .Error-Title {
+            font-size: 150px;
+        }
+
+        .Error-Subtitle {
+            font-size: 20px;
+            margin-top: 100px;
+        }
+
+        .Error-Link {
+            font-size: 18px;  
+        }
+    }
+
+
+    .banner-container {
+        height: 110px;
+
+        .banner {
+            border-radius: 10px;
+        }
+
+        .banner-text {
+            text-align: left;
+            top: 0
+            50%;
+            left: 35%;
+            h1 {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .articles {
+        background-color: white;
+        padding: 0;
+    }
+
+    .article-container {
+        height: 255px;
+        flex-basis: 100%; 
+        margin-bottom: 30px;
+        border-radius: 7px;
+    }
+
+    .slider {
+        height: 260px;
+        border-radius: 10px;
+    }
+
+    .slide-counter {
+        font-size: 18px;
+    }
+
+    .slider button {
+        padding: 2px 10px;
+        font-size: 40px;
+    }
+
+    .article-info {
+        flex-direction: column;
+        padding-top: 10px;
+
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .tags {
+        flex-wrap: wrap;
+        .tag {
+            border-radius: 10px;
+            padding: 7px 30px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    }
+
+    .host-info {
+        padding-left: 220px;
+        img {
+            height: 50px;
+        }
+    }
+
+
+    .star {
+        font-size: 20px;
+    }
+
+    .rating {
+        padding-top: 0;
+        left: 0;
+    }
+
+    .article-button {
+        flex-direction: column;
+        gap: 0;
+
+        .collapse {
+            
+            .collapse-header {
+                padding: 0 20px;
+                font-size: 16px;
+
+            }
+            .collapse-content {
+
+                p{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        
+    }
+
+    .collapse-header {
+        padding: 0 20px;
+        font-size: 18px;
+    }
+
+    .collapse-content {
+        font-size: 16px;
+    }
+
+    footer {
+        img {
+            height: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 5px 100px;
+        }
+    }
+
+
+  }
   

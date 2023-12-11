@@ -42,8 +42,7 @@ const Article = ({ articles }) => {
           <div className="host-info">
             <p>{article.host.name}</p>
             <img src={article.host.picture} alt="" />
-          </div>
-          <div className="rating">
+            <div className="rating">
             {(() => {
               const stars = [];
               for (let i = 0; i < 5; i++) {
@@ -57,6 +56,8 @@ const Article = ({ articles }) => {
               return stars;
             })()}
           </div>
+          </div>
+         
         </div>
       </div>
 
