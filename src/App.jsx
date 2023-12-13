@@ -14,17 +14,19 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch("./data.json");
-  
+    
         if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.statusText}`);
         }
-  
+    
         const data = await response.json();
+        console.log('Fetched data:', data);
         setArticles(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
+    
   
     fetchData();
   }, []);
