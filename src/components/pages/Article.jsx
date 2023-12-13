@@ -38,10 +38,10 @@ const Article = ({ articles }) => {
             ))}
           </div>
         </div>
-        <div>
           <div className="host-info">
-            <p>{article.host.name}</p>
-            <img src={article.host.picture} alt="" />
+            <div  className="host-name"><p>{article.host.name}</p>
+            <img src={article.host.picture} alt="" /></div>
+            
             <div className="rating">
             {(() => {
               const stars = [];
@@ -55,7 +55,6 @@ const Article = ({ articles }) => {
               }
               return stars;
             })()}
-          </div>
           </div>
          
         </div>

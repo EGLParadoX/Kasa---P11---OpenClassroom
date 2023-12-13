@@ -51,14 +51,14 @@
 
     header {
         ul {
-            width: 180px;
+            width: 145px;
         }
         a {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .header-logo{
-            height: 40px;
+            height: 30px;
         }
     }
 
@@ -80,7 +80,7 @@
 
 
     .banner-container {
-        height: 110px;
+        height: 80px;
 
         .banner {
             border-radius: 10px;
@@ -92,7 +92,7 @@
             50%;
             left: 35%;
             h1 {
-                font-size: 22px;
+                font-size: 18px;
             }
         }
     }
@@ -110,28 +110,31 @@
     }
 
     .slider {
-        height: 260px;
+        height: 220px;
         border-radius: 10px;
     }
 
     .slide-counter {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .slider button {
         padding: 2px 10px;
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .article-info {
         flex-direction: column;
+        align-items: baseline;
+        border: 1px solid red;
+
         padding-top: 10px;
 
         h1 {
             font-size: 24px;
         }
         p {
-            font-size: 18px;
+            font-size: 16px;
         }
     }
 
@@ -139,14 +142,18 @@
         flex-wrap: wrap;
         .tag {
             border-radius: 10px;
-            padding: 7px 30px;
+            padding: 7px 10px;
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 
     .host-info {
-        padding-left: 220px;
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        border: 1px solid red;
+
         img {
             height: 50px;
         }
@@ -154,12 +161,13 @@
 
 
     .star {
-        font-size: 20px;
+        margin-right: 2px;
+        font-size: 16px;
     }
 
     .rating {
-        padding-top: 0;
-        left: 0;
+        margin-left: 0;
+        margin-top: 0;
     }
 
     .article-button {
