@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Gallery = ({ pictures }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +15,6 @@ const Gallery = ({ pictures }) => {
   };
 
   const slideCounter = `${currentSlide + 1}/${pictures.length}`;
-
 
   if (pictures.length <= 1) {
     return (
@@ -62,4 +61,3 @@ Gallery.propTypes = {
 };
 
 export default Gallery;
-

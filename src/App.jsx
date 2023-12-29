@@ -1,11 +1,11 @@
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/layout/Header';
-import { useState, useEffect } from 'react';
-import Home from './components/pages/Home'; 
-import About from './components/pages/About'; 
-import Error404 from './components/pages/Error404';
-import Article from './components/pages/Article';
-import Footer from './components/layout/Footer';
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/layout/Header";
+import { useState, useEffect } from "react";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Error404 from "./components/pages/Error404";
+import Article from "./components/pages/Article";
+import Footer from "./components/layout/Footer";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -14,23 +14,21 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch("./data.json");
-    
+
         if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.statusText}`);
         }
-    
+
         const data = await response.json();
-        console.log('Fetched data:', data);
+        console.log("Fetched data:", data);
         setArticles(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
-    
-  
+
     fetchData();
   }, []);
-  
 
   return (
     <Router>
@@ -39,7 +37,7 @@ const App = () => {
         <Route path="/" element={<Home articles={articles} />} />
         <Route path="/about" element={<About />} />
         <Route path="/article/:id" element={<Article articles={articles} />} />
-        <Route path="*" element={<Error404 />} /> 
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import HomeSection from '../sections/HomeSection';
+import PropTypes from "prop-types";
+import HomeSection from "../sections/HomeSection";
 
 const Home = ({ articles }) => {
   return (
